@@ -10,6 +10,7 @@ function CharDetails(props) {
 
     const [data, setData] = useState(undefined)
     const [death, setDeath] = useState(undefined)
+    const [quotes, setQuotes] = useState(undefined)
 
     useEffect(async () => {
         const res = await getAllCharacter(id)
@@ -17,24 +18,36 @@ function CharDetails(props) {
         const _death = await getApiResponse('death-count?name=' + res[0].name.replace(" ", "+"))
         console.log(_death[0])
         setDeath(_death[0])
+        const _quotes = await getApiResponse('quote?author=' + res[0].name.replace(" ", "+"))
+        setQuotes(_quotes)
+        console.log(_quotes)
     }, [])
-
-    if (!data || !death) {
+    if (!data || !death || !quotes) {
         return false
     }
 
     return (
         <div className='detail-container'>
             <div className='content-container'><img src={data.img} className='detail-img'></img></div>
-            <div className='content-container'><p>Status :</p><div>{data.status}</div></div>
+            <div className='content-container'><p>&#x1F4D6; Status :</p><div>{data.status}</div></div>
             <div className='content-container'><p>Nom :</p><div>{data.name}</div></div>
             <div className='content-container'><p>Surnom :</p><div>{data.nickname}</div></div>
-            <div className='content-container'><p>Deaths :</p><div>{death.deathCount}</div></div>
+            <div className='content-container'><p>Deaths :</p><div>{death.deathCount}&#x1F480;</div></div>
             {data.occupation.map((occupation) => {
                 return (
                     <div className='content-container'><p>Occupation :</p><div>{occupation}</div></div>
                 )
             })}
+            <div className='quotes-container'>
+                <p>Citations :</p>
+                <div className='quotes-list'>
+                    {quotes.map((quote) => {
+                        return (
+                            <div className='quote'><div>- {quote.quote}</div></div>
+                        )
+                    })}
+                </div>
+            </div>
         </div >
     )
 }
