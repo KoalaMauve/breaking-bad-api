@@ -1,0 +1,20 @@
+.character{
+    margin: 3%;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.char-img{
+    max-width: 100px;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: .9;
+}
+
+.char-btm p{
+    font-family: Verdana;
+}
