@@ -45,40 +45,45 @@ function CharDetails(props) {
 
     return (
         <div className='detail-body'>
-            <div onClick={handlePrevHistory}>-1</div>
-            <div className='detail-container'>
-                <div className='detail-img-container'><img src={data.img} className='detail-img'></img></div>
-                <div className='content-container'><p>Status :</p><div>{data.status}</div></div>
-                <div className='content-container'><p>Nom :</p><div>{data.name}</div></div>
-                <div className='content-container'><p>Surnom :</p><div>{data.nickname}</div></div>
-                <div className='content-container'><p>Deaths :</p><div>{death.deathCount}&#x1F480;</div></div>
+            <div>
 
-                <div className='occupation-container'>
-                    <div><p>Occupation :</p></div>
-                    <div className='occupation-list'>
-                        {data.occupation.map((occupation) => {
-                            return (
-                                <div className=''><div className='occupation'>{occupation}</div></div>
-                            )
-                        })}
-                    </div>
-                </div>
+                <div className='detail-container'>
+                    <div className='detail-img-container'><img src={data.img} className='detail-img'></img></div>
+                    <div className='content-container'><p>Status :</p><div>{data.status}</div></div>
+                    <div className='content-container'><p>Nom :</p><div>{data.name}</div></div>
+                    <div className='content-container'><p>Surnom :</p><div>{data.nickname}</div></div>
+                    <div className='content-container'><p>Deaths :</p><div>{death.deathCount}&#x1F480;</div></div>
 
-                {quotes.length != 0 ?
-                    <div className='quotes-container'>
-                        <p>Citations :</p>
-                        <div className='quotes-list'>
-                            {quotes.map((quote) => {
+                    <div className='occupation-container'>
+                        <div><p>Occupation :</p></div>
+                        <div className='occupation-list'>
+                            {data.occupation.map((occupation) => {
                                 return (
-                                    <div className='quote'><div>· {quote.quote}</div></div>
+                                    <div className=''><div className='occupation'>{occupation}</div></div>
                                 )
                             })}
                         </div>
                     </div>
-                    : null
-                }
-            </div >
-            <div onClick={handleNextHistory}>+1</div>
+
+                    {quotes.length != 0 ?
+                        <div className='quotes-container'>
+                            <p>Citations :</p>
+                            <div className='quotes-list'>
+                                {quotes.map((quote) => {
+                                    return (
+                                        <div className='quote'><div>· {quote.quote}</div></div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        : null
+                    }
+                </div >
+                <div className='detail-nav-container'>
+                    <div className='detail-nav-button detail-next-char' onClick={handleNextHistory}>◄</div>
+                    <div className='detail-nav-button detail-previous-char' onClick={handlePrevHistory}>►</div>
+                </div>
+            </div>
         </div>
     )
 }
