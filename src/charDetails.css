@@ -1,4 +1,4 @@
-.detail-body{
+.detail-body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -16,8 +16,8 @@
     width: 400px;
     max-width: 400px;
     align-self: center;
-    padding : 1%;
-    border : solid 2px black;
+    padding: 3%;
+    border: solid 2px black;
     border-radius: 15px;
     background: #F5F5F5;
 }
@@ -30,27 +30,27 @@
     width: 100%;
 }
 
-.occupation-container{
+.occupation-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.occupation-list{
+.occupation-list {
     flex-direction: column;
 }
 
-.occupation{
+.occupation {
     text-align: end;
 }
 
-p::after{
+p::after {
     content: ' ';
     white-space: pre;
 }
 
-.detail-img{
+.detail-img {
     height: auto;
     max-height: 400px;
     width: auto;
@@ -62,50 +62,51 @@ p::after{
     border-radius: 10px;
 }
 
-.quotes-list{
+.quotes-list {
     flex-direction: column;
     max-height: 7em;
     overflow: auto;
 }
 
-.quote{
+.quote {
     flex-direction: row;
     margin-bottom: 1em;
 }
 
-.quotes-container{
+.quotes-container {
     width: 100%;
     flex-direction: column;
 }
 
 /*quotes-list scrollbar*/
-.quotes-list::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
-.quotes-list::-webkit-scrollbar{
-	width: 12px;
-	background-color: #F5F5F5;
+.quotes-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
-.quotes-list::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
+.quotes-list::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
 }
 
-.detail-nav-button{
+.quotes-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+.detail-nav-button {
     padding: 1%;
+    font-size: 1.3em;
     border: solid 1px #555;
     border-radius: 40px;
     background-color: #F5F5F5;
 }
 
-.detail-nav-container{
+.detail-nav-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+
 }
