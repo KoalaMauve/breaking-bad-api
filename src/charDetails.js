@@ -24,6 +24,10 @@ function CharDetails(props) {
         history.push("/characters/" + (id + 1))
     }
 
+    function handleHomeHistory() {
+        history.push("/")
+    }
+
 
     const [data, setData] = useState(undefined)
     const [death, setDeath] = useState(undefined)
@@ -45,7 +49,7 @@ function CharDetails(props) {
 
     return (
         <div className='detail-body'>
-            <div>
+            <div className='detail-card'>
 
                 <div className='detail-container'>
                     <div className='detail-img-container'><img src={data.img} className='detail-img'></img></div>
@@ -81,6 +85,7 @@ function CharDetails(props) {
                 </div >
                 <div className='detail-nav-container'>
                     <div className='detail-nav-button detail-next-char' onClick={handleNextHistory}>◄</div>
+                    <div className='detail-nav-button detail-home' onClick={handleHomeHistory}>Home</div>
                     <div className='detail-nav-button detail-previous-char' onClick={handlePrevHistory}>►</div>
                 </div>
             </div>
